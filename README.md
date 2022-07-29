@@ -1,22 +1,67 @@
-# n8n-nodes-starter
+# n8n-nodes-aws-step-functions
 
-This repo contains example nodes to help you get started building your own custom integrations for n8n.
+![n8n.io - Workflow Automation](https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-logo.png)
 
-All nodes are npm packages. To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
+[n8n](https://www.n8n.io) node for interacting with the [AWS Step Functions](https://docs.aws.amazon.com/step-functions/latest/apireference/Welcome.html) API.
 
-## Using this starter
+## How to install
 
-1. Clone the repo:
-    ```
-    git clone https://github.com/n8n-io/n8n-nodes-starter.git
-    ```
-2. Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/creating-nodes/).
-3. Open the project in your editor.
-4. Browse the examples in `/nodes`. Modify the examples, or replace them with your own nodes.
-5. Update the `package.json` to match your details.
-6. Run `npm run lint` to check for errors or `npm run lintfix` to automatically fix errors when possible.
-7. Publish your package to npm. More information on the links below.
+### Community Nodes (Recommended)
+
+For users on n8n v0.187+, your instance owner can install this node from [Community Nodes](https://docs.n8n.io/integrations/community-nodes/installation/).
+
+1. Go to **Settings > Community Nodes**.
+2. Select **Install**.
+3. Enter `n8n-nodes-aws-step-functions` in **Enter npm package name**.
+4. Agree to the [risks](https://docs.n8n.io/integrations/community-nodes/risks/) of using community nodes: select **I understand the risks of installing unverified code from a public source**.
+5. Select **Install**.
+
+After installing the node, you can use it like any other node. n8n displays the node in search results in the **Nodes** panel.
+
+### Manual installation
+To get started install the package in your n8n root directory:
+
+`npm install n8n-nodes-aws-step-functions`
+
+
+For Docker-based deployments, add the following line before the font installation command in your [n8n Dockerfile](https://github.com/n8n-io/n8n/blob/master/docker/images/n8n/Dockerfile):
+
+
+`RUN cd /usr/local/lib/node_modules/n8n && npm install n8n-nodes-aws-step-functions`
+
+## Node Reference
+
+* **Operations**
+    * Describe Execution
+    * Describe State Machine
+    * Describe State Machine for Execution
+    * Send Task Failure
+    * Send Task Heartbeat
+    * Send Task Success
+    * Start Execution
+    * Stop Execution
+
 
 ## License
 
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+MIT License
+
+Copyright (c) 2022 Nicholas Penree <nick@penree.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
